@@ -51,8 +51,8 @@ export default async function Launch({ params }: { params: { id: string } }) {
       }}
     >
       <Suspense fallback={<div>Loading...</div>}>
-        <Flex minH="md" justify="space-between">
-          <Stack maxW="sm" minW="sm" px="8" spacing={3}>
+        <Flex minH="md" justify="space-between" wrap="wrap" gap="25px">
+          <Stack maxW="md" minW="sm" px="8" spacing={3}>
             <Heading>{launch?.name}</Heading>
             <Text fontSize="xs">
               {dayjs(launch?.date_utc).format("DD MMMM YYYY HH:mm")}
@@ -88,7 +88,14 @@ export default async function Launch({ params }: { params: { id: string } }) {
             </Stack>
           </Stack>
           {/* <Spacer /> */}
-          <Box flex="1" px="4" maxW="960px">
+          <Box
+            flex="1"
+            px="4"
+            maxW="1200px"
+            minW="360px"
+            width="100%"
+            minH="260px"
+          >
             <Box h="100%">
               <YoutubeEmbed embedId={launch?.links.youtube_id} />
             </Box>
