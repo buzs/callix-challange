@@ -35,7 +35,7 @@ export const getNextLaunch = async () => {
 };
 
 export const getLastLaunch = async () => {
-  const data = await fetchRequest<Launch>("launches/latest");
+  const data = await fetchRequest<Launch>("launches/last");
 
   return data;
 };
