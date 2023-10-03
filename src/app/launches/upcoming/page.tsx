@@ -2,11 +2,6 @@ import { getUpcomingLaunches } from "@/service/spacex";
 import { Flex } from "@chakra-ui/react";
 
 import LaunchBox from "@/components/LaunchBox/LaunchBox";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Upcoming Launches",
-};
 
 export default async function Upcoming() {
   const launches = await getUpcomingLaunches();
