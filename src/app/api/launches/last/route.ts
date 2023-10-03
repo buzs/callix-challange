@@ -8,7 +8,7 @@ export async function GET(request: Request) {
   } catch (error) {
     return Response.json({
       ok: false,
-      error: "Error",
+      error,
     });
   }
 }

@@ -14,7 +14,10 @@ async function fetchRequest<T>(path: string) {
     //   const response = await rPath.GET();
 
     if (!response.ok) {
-      throw new Error("Failed to fetch data");
+      console.warn(
+        process.env.INTERNAL_API_URL || `${protocol}://${host}/api/` + path
+      );
+      throw new Error("Failed to fetch data", await response.json());
     }
 
     return response.json() as Promise<T>;
