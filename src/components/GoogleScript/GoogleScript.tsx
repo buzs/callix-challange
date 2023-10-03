@@ -6,7 +6,7 @@ export default function GoogleScript() {
   return (
     <>
       <Script
-        src={`https://www.googleoptimize.com/optimize.js?id=GTM-MB39XR7`}
+        src={`https://www.googleoptimize.com/optimize.js?id=OPT-TRQ4PKP`}
       />
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=G-JRCF93LFQ7`}
