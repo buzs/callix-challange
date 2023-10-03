@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
-  const variant = useExperiment("KNWAnsYWTGCaEOYfOSEg2A"); // Menu Style (Uppercase or not)
+  const variant = useExperiment("M8Ujcyd0QhOvNhu98E5LMw"); // Menu Style (Uppercase or not)
 
   return (
     <header>
