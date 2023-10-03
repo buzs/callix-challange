@@ -12,6 +12,8 @@ const launch = {
       small: "https://via.placeholder.com/100",
     },
   },
+  success: true,
+  upcoming: false,
 };
 
 describe("<LaunchBox />", () => {
