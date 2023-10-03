@@ -10,14 +10,8 @@ import {
   Spacer,
   Stack,
   Stat,
-  StatHelpText,
   StatLabel,
   StatNumber,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
   Text,
 } from "@chakra-ui/react";
 
@@ -39,6 +33,7 @@ export async function generateMetadata({
     title: launch.name,
   };
 }
+
 export default async function Launch({ params }: { params: { id: string } }) {
   const launch = await getLaunchById(params.id);
 
