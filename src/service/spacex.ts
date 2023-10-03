@@ -5,10 +5,10 @@ async function fetchRequest<T>(path: string) {
   try {
     const host = headers().get("host");
     const protocol = process?.env.NODE_ENV === "development" ? "http" : "https";
-    const response = await fetch(
-      process.env.INTERNAL_API_URL || `${protocol}://${host}/api/` + path,
-      { next: { revalidate: 3600 } }
-    );
+
+    const URL = process.env.INTERNAL_API_URL || `${protocol}://${host}/api/`;
+
+    const response = await fetch(URL + path, { next: { revalidate: 3600 } });
 
     //   const rPath = await import(`../app/api/${path}/route`);
     //   const response = await rPath.GET();
@@ -17,7 +17,7 @@ async function fetchRequest<T>(path: string) {
       console.warn(
         process.env.INTERNAL_API_URL || `${protocol}://${host}/api/` + path
       );
-      throw new Error("Failed to fetch data", await response.json());
+      throw new Error("Failed to fetch data");
     }
 
     return response.json() as Promise<T>;
