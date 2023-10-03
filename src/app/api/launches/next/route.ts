@@ -1,26 +1,14 @@
-const mock = [
-  {
-    id: "1",
-    title: "test",
-    description: "test",
-    date: "test",
-    image: "test",
-    video: "test",
-    rocket: {
-      id: "1",
-      name: "test",
-      description: "test",
-      image: "test",
-    },
-    launchpad: {
-      id: "1",
-      name: "test",
-      description: "test",
-      image: "test",
-    },
-  },
-];
+import { getNextLaunch } from "@/server";
 
-export async function GET() {
-  return Response.json(mock);
+export async function GET(request: Request) {
+  try {
+    const data = await getNextLaunch();
+
+    return Response.json(data);
+  } catch (error) {
+    return Response.json({
+      ok: false,
+      error: "Error",
+    });
+  }
 }
