@@ -22,6 +22,8 @@ import YoutubeEmbed from "@/components/YoutubeFrame/YoutubeFrame";
 
 import dayjs from "dayjs";
 
+import bg from "../../../../public/bg.png";
+
 export async function generateMetadata({
   params,
 }: {
@@ -38,7 +40,16 @@ export default async function Launch({ params }: { params: { id: string } }) {
   const launch = await getLaunchById(params.id);
 
   return (
-    <main className="h-full pt-10">
+    <main
+      className="h-full pt-10"
+      style={{
+        backgroundImage: `url(${bg.src})`,
+        backgroundSize: "contain",
+        backgroundPosition: "0 520px",
+        backgroundRepeat: "no-repeat",
+        height: "calc(100vh - 65px)",
+      }}
+    >
       <Suspense fallback={<div>Loading...</div>}>
         <Flex minH="md" justify="space-between">
           <Stack maxW="sm" minW="sm" px="8" spacing={3}>

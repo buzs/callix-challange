@@ -9,6 +9,8 @@ import {
 import { Heading, Box, Flex, Skeleton } from "@chakra-ui/react";
 import { Suspense } from "react";
 
+import bg from "../../public/bg.png";
+
 export default async function Home() {
   const [pastLaunches, upcomingLaunches, lastLaunch, nextLaunch] =
     await Promise.all([
@@ -21,21 +23,20 @@ export default async function Home() {
   return (
     <Flex
       as="main"
-      px="20"
-      pt="45px"
-      align="center"
+      px="20px"
+      pt="55px"
+      align="flex-start"
       w="100%"
       justify="space-evenly"
+      style={{
+        backgroundImage: `url(${bg.src})`,
+        backgroundSize: "contain",
+        backgroundPosition: "0 520px",
+        backgroundRepeat: "no-repeat",
+        height: "calc(100vh - 65px)",
+      }}
     >
-      <Flex
-        as={Box}
-        align="center"
-        direction="column"
-        gap="20"
-        w="100%"
-        px="45"
-        maxW="lg"
-      >
+      <Flex as={Box} direction="column" gap="20" w="100%" px="45" maxW="lg">
         <Suspense fallback="Loading">
           <Box alignSelf="flex-start">
             <Heading size="lg" color="whiteAlpha.700" textTransform="uppercase">
