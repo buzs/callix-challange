@@ -2,6 +2,6 @@
 
 import CountUp from "react-countup";
 
-export default function AnimatedNumber({ number }: { number: number }) {
-  return <CountUp end={number} />;
+export default function AnimatedNumber({ number }: { number?: number }) {
+  return <CountUp end={number || 0} />;
 }

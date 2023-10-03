@@ -30,9 +30,9 @@ export default function LaunchBox({
 }: {
   id: string;
   name: string;
-  details: string;
+  details?: string;
   date_utc: string;
-  badge: string;
+  badge?: string;
   success: boolean;
   upcoming: boolean;
 }) {

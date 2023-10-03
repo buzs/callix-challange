@@ -2,7 +2,7 @@
 
 import { Box, Heading, Flex } from "@chakra-ui/react";
 
-export default function YoutubeEmbed({ embedId }: { embedId: string | null }) {
+export default function YoutubeEmbed({ embedId }: { embedId?: string | null }) {
   return (
     <div className="aspect-w-16 aspect-h-9 h-full">
       {embedId ? (

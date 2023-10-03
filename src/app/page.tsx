@@ -6,7 +6,7 @@ import {
   getPastLaunches,
   getUpcomingLaunches,
 } from "@/service/spacex";
-import { Heading, Box, Flex } from "@chakra-ui/react";
+import { Heading, Box, Flex, Skeleton } from "@chakra-ui/react";
 import { Suspense } from "react";
 
 export default async function Home() {
@@ -42,7 +42,7 @@ export default async function Home() {
               Past Launches
             </Heading>
             <Heading size="2xl" color="whiteAlpha.500" pl="18px">
-              <AnimatedNumber number={pastLaunches.length} />
+              <AnimatedNumber number={pastLaunches?.length} />
             </Heading>
           </Box>
           <Box alignSelf="flex-end" textAlign="right">
@@ -50,7 +50,7 @@ export default async function Home() {
               Upcoming Launches
             </Heading>
             <Heading size="2xl" color="whiteAlpha.500" pr="18px">
-              <AnimatedNumber number={upcomingLaunches.length} />
+              <AnimatedNumber number={upcomingLaunches?.length} />
             </Heading>
           </Box>
         </Suspense>
@@ -61,13 +61,29 @@ export default async function Home() {
           <Heading size="lg" textAlign="right" pb="4">
             Next Launch
           </Heading>
-          <LaunchBox {...nextLaunch} badge={nextLaunch.links.patch.small} />
+          {nextLaunch ? (
+            <LaunchBox {...nextLaunch} badge={nextLaunch?.links.patch.small} />
+          ) : (
+            <Skeleton>
+              <Box minW="sm" maxW="sm">
+                ...
+              </Box>
+            </Skeleton>
+          )}
         </Box>
         <Box>
           <Heading size="lg" textAlign="right" pb="4">
             Latest Launch
           </Heading>
-          <LaunchBox {...lastLaunch} badge={lastLaunch.links.patch.small} />
+          {lastLaunch ? (
+            <LaunchBox {...lastLaunch} badge={lastLaunch?.links.patch.small} />
+          ) : (
+            <Skeleton>
+              <Box minW="sm" maxW="sm">
+                ...
+              </Box>
+            </Skeleton>
+          )}
         </Box>
       </Flex>
     </Flex>

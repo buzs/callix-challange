@@ -9,7 +9,7 @@ export default async function Past() {
   return (
     <main>
       <Flex gap="4" p="8" wrap="wrap" justify="space-between">
-        {launches.map((launch) => (
+        {launches?.map((launch) => (
           <LaunchBox
             key={launch.id}
             {...launch}
