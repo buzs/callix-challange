@@ -14,6 +14,7 @@
     "e2e": "cypress open"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/next-js": "^2.1.5",
     "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
@@ -23,6 +24,7 @@
     "framer-motion": "^10.16.4",
     "next": "latest",
     "react": "latest",
+    "react-countup": "^6.4.2",
     "react-dom": "latest"
   },
   "devDependencies": {
