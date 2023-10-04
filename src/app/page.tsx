@@ -63,7 +63,11 @@ export default async function Home() {
             Next Launch
           </Heading>
           {nextLaunch ? (
-            <LaunchBox {...nextLaunch} badge={nextLaunch?.links.patch.small} />
+            <LaunchBox
+              testId="next-launch"
+              {...nextLaunch}
+              badge={nextLaunch?.links.patch.small}
+            />
           ) : (
             <Skeleton>
               <Box minW="sm" maxW="sm">
@@ -77,7 +81,11 @@ export default async function Home() {
             Latest Launch
           </Heading>
           {lastLaunch ? (
-            <LaunchBox {...lastLaunch} badge={lastLaunch?.links.patch.small} />
+            <LaunchBox
+              testId="last-launch"
+              {...lastLaunch}
+              badge={lastLaunch?.links.patch.small}
+            />
           ) : (
             <Skeleton>
               <Box minW="sm" maxW="sm">

@@ -27,6 +27,7 @@ export default function LaunchBox({
   badge,
   success,
   upcoming,
+  testId,
 }: {
   id: string;
   name: string;
@@ -35,10 +36,12 @@ export default function LaunchBox({
   badge?: string;
   success: boolean;
   upcoming: boolean;
+  testId?: string;
 }) {
   return (
     <LinkBox
       role="launch-box"
+      data-test={testId}
       key={id}
       as={Flex}
       gap="4"
