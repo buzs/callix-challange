@@ -7,11 +7,11 @@ describe("Navigation", () => {
 
     // Check that the header is correct
     cy.get("a").should("contain", "Home");
-    const pastLaunchesLink = cy.get("a").should("contain", "Past Launches");
+    cy.get("a").should("contain", "Past Launches");
     cy.get("a").should("contain", "Upcoming Launches");
 
     // Click on the "Past Launches" link, and navigate to the past launches page
-    pastLaunchesLink.click();
+    cy.get("a").contains("Past Launches").click();
 
     // Check that the URL is correct
     cy.url().should("include", "/launches/past");
@@ -36,12 +36,10 @@ describe("Navigation", () => {
     // Check that the header is correct
     cy.get("a").should("contain", "Home");
     cy.get("a").should("contain", "Past Launches");
-    const upcomingLaunchesLink = cy
-      .get("a")
-      .should("contain", "Upcoming Launches");
+    cy.get("a").should("contain", "Upcoming Launches");
 
     // Click on the "Upcoming Launches" link, and navigate to the upcoming launches page
-    upcomingLaunchesLink.click();
+    cy.get("a").contains("Upcoming Launches").click();
 
     // Check that the URL is correct
     cy.url().should("include", "/launches/upcoming");
@@ -63,9 +61,5 @@ describe("Navigation", () => {
     cy.get("[data-test='next-launch']").click();
 
     cy.url().should("include", "/launch/");
-  });
-
-  it("Scroll and open a launch in the past and upcoming page", () => {
-    cy.visit("/launches/upcoming");
   });
 });
